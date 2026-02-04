@@ -78,7 +78,7 @@ export default function Cart() {
             <div className="space-y-4">
               {items.map((item) => (
                 <div
-                  key={item.product.id}
+                  key={item.product.slug}
                   className="flex gap-4 bg-gray-50 rounded-lg p-3"
                 >
                   <div className="relative w-20 h-20 flex-shrink-0">
@@ -99,7 +99,7 @@ export default function Cart() {
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() =>
-                          updateQuantity(item.product.id, item.quantity - 1)
+                          updateQuantity(item.product.slug, item.quantity - 1)
                         }
                         className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"
                       >
@@ -108,14 +108,14 @@ export default function Cart() {
                       <span className="w-8 text-center">{item.quantity}</span>
                       <button
                         onClick={() =>
-                          updateQuantity(item.product.id, item.quantity + 1)
+                          updateQuantity(item.product.slug, item.quantity + 1)
                         }
                         className="w-7 h-7 rounded-full border border-gray-300 flex items-center justify-center hover:bg-gray-100"
                       >
                         +
                       </button>
                       <button
-                        onClick={() => removeFromCart(item.product.id)}
+                        onClick={() => removeFromCart(item.product.slug)}
                         className="ml-auto text-red-500 hover:text-red-700"
                       >
                         <svg
