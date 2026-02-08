@@ -4,11 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useUser } from "@/context/UserContext";
 import Cart from "./Cart";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { totalItems, setIsCartOpen } = useCart();
+  const { user, isAuthenticated, isLoading, logout } = useUser();
+
+  const handleLogout = async () => {
+    await logout();
+    setIsUserMenuOpen(false);
+  };
 
   return (
     <>
@@ -55,7 +63,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Cart & Mobile Menu */}
+            {/* Cart & User & Mobile Menu */}
             <div className="flex items-center space-x-4">
               {/* Search Icon */}
               <button className="p-2 text-gray-700 hover:text-olive-600 transition-colors">
@@ -73,6 +81,108 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
+
+              {/* User Icon / Menu */}
+              {!isLoading && (
+                <div className="relative">
+                  {isAuthenticated ? (
+                    <>
+                      <button
+                        onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                        className="p-2 text-gray-700 hover:text-olive-600 transition-colors flex items-center gap-1"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                          />
+                        </svg>
+                        <span className="hidden sm:inline text-sm font-medium max-w-24 truncate">
+                          {user?.name?.split(" ")[0]}
+                        </span>
+                      </button>
+
+                      {/* User Dropdown */}
+                      {isUserMenuOpen && (
+                        <>
+                          <div
+                            className="fixed inset-0 z-10"
+                            onClick={() => setIsUserMenuOpen(false)}
+                          />
+                          <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border z-20">
+                            <div className="p-3 border-b">
+                              <p className="font-medium text-gray-900 truncate">
+                                {user?.name}
+                              </p>
+                              <p className="text-sm text-gray-500 truncate">
+                                {user?.email}
+                              </p>
+                            </div>
+                            <div className="py-1">
+                              <Link
+                                href="/account"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              >
+                                My Account
+                              </Link>
+                              <Link
+                                href="/account/orders"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              >
+                                My Orders
+                              </Link>
+                              <Link
+                                href="/account/addresses"
+                                onClick={() => setIsUserMenuOpen(false)}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              >
+                                Addresses
+                              </Link>
+                              <button
+                                onClick={handleLogout}
+                                className="w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                              >
+                                Sign Out
+                              </button>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href="/login"
+                      className="p-2 text-gray-700 hover:text-olive-600 transition-colors flex items-center gap-1"
+                    >
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                      <span className="hidden sm:inline text-sm font-medium">
+                        Sign In
+                      </span>
+                    </Link>
+                  )}
+                </div>
+              )}
 
               {/* Cart Icon */}
               <button
@@ -162,6 +272,54 @@ export default function Navbar() {
                 >
                   Contact
                 </Link>
+
+                {/* Mobile Auth Links */}
+                <div className="border-t pt-4 mt-4">
+                  {isAuthenticated ? (
+                    <>
+                      <Link
+                        href="/account"
+                        className="block text-gray-700 hover:text-olive-600 transition-colors font-medium mb-3"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        My Account
+                      </Link>
+                      <Link
+                        href="/account/orders"
+                        className="block text-gray-700 hover:text-olive-600 transition-colors font-medium mb-3"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        My Orders
+                      </Link>
+                      <button
+                        onClick={() => {
+                          handleLogout();
+                          setIsMobileMenuOpen(false);
+                        }}
+                        className="text-gray-700 hover:text-olive-600 transition-colors font-medium"
+                      >
+                        Sign Out
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        href="/login"
+                        className="block text-gray-700 hover:text-olive-600 transition-colors font-medium mb-3"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Sign In
+                      </Link>
+                      <Link
+                        href="/signup"
+                        className="block text-olive-600 hover:text-olive-700 transition-colors font-medium"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Create Account
+                      </Link>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
           )}

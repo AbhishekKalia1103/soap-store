@@ -25,6 +25,7 @@ export type PaymentStatus = 'pending' | 'paid' | 'failed' | 'refunded';
 
 export interface IOrder extends Document {
   orderNumber: string;
+  userId?: mongoose.Types.ObjectId;
   customerEmail: string;
   customerName: string;
   items: IOrderItem[];
@@ -35,6 +36,9 @@ export interface IOrder extends Document {
   total: number;
   status: OrderStatus;
   paymentStatus: PaymentStatus;
+  razorpayOrderId?: string;
+  razorpayPaymentId?: string;
+  razorpaySignature?: string;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -120,6 +124,11 @@ const OrderSchema = new Schema<IOrder>(
         return `SS-${dateStr}-${random}`;
       },
     },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      sparse: true,
+    },
     customerEmail: {
       type: String,
       required: true,
@@ -173,6 +182,18 @@ const OrderSchema = new Schema<IOrder>(
       enum: ['pending', 'paid', 'failed', 'refunded'],
       default: 'pending',
     },
+    razorpayOrderId: {
+      type: String,
+      sparse: true,
+    },
+    razorpayPaymentId: {
+      type: String,
+      sparse: true,
+    },
+    razorpaySignature: {
+      type: String,
+      sparse: true,
+    },
   },
   {
     timestamps: true,
@@ -180,6 +201,7 @@ const OrderSchema = new Schema<IOrder>(
 );
 
 // Indexes for common queries
+// Note: userId and razorpayOrderId already have sparse indexes from field definition
 OrderSchema.index({ customerEmail: 1 });
 OrderSchema.index({ status: 1 });
 OrderSchema.index({ paymentStatus: 1 });

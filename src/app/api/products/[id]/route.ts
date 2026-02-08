@@ -91,6 +91,52 @@ export async function PUT(
   }
 }
 
+// PATCH /api/products/[id] - Partial update product
+export async function PATCH(
+  request: NextRequest,
+  context: RouteContext
+) {
+  try {
+    await connectDB();
+
+    const { id } = await context.params;
+    const body = await request.json();
+
+    let product;
+
+    // Check if id is a valid MongoDB ObjectId
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      product = await Product.findByIdAndUpdate(id, body, {
+        new: true,
+        runValidators: true,
+      });
+    }
+
+    // If not found by _id, try finding by slug
+    if (!product) {
+      product = await Product.findOneAndUpdate({ slug: id }, body, {
+        new: true,
+        runValidators: true,
+      });
+    }
+
+    if (!product) {
+      return NextResponse.json(
+        { error: 'Product not found' },
+        { status: 404 }
+      );
+    }
+
+    return NextResponse.json(product);
+  } catch (error) {
+    console.error('Error updating product:', error);
+    return NextResponse.json(
+      { error: 'Failed to update product' },
+      { status: 500 }
+    );
+  }
+}
+
 // DELETE /api/products/[id] - Delete product
 export async function DELETE(
   request: NextRequest,
