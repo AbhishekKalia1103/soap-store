@@ -21,8 +21,7 @@ export const products: Product[] = [
     slug: "ubtan",
     name: "Ubtan",
     description: "A traditional skincare ritual in a bar. Our Ubtan Soap is inspired by age-old Indian beauty recipes that gently exfoliate, brighten and restore natural glow. Best for dull skin, uneven tone, and tan removal. Suitable for all skin types. Chemical-free, paraben-free, handmade and skin-loving.",
-    price: 299,
-    originalPrice: 399,
+    price: 249,
     image: "/images/products/ubtan.jpeg",
     images: [
       "/images/products/ubtan.jpeg",
@@ -41,7 +40,7 @@ export const products: Product[] = [
     slug: "neem-aloe",
     name: "Neem & Aloe",
     description: "Your natural solution for acne-prone and oily skin. Neem is known for its antibacterial properties that help cleanse deeply and fight breakouts. Best for acne-prone and oily skin. Suitable for oily and combination skin types. Anti-bacterial, detoxifying, oil-control and handmade.",
-    price: 249,
+    price: 199,
     image: "/images/products/neem-aloe.jpeg",
     images: [
       "/images/products/neem-aloe.jpeg",
@@ -59,8 +58,7 @@ export const products: Product[] = [
     slug: "rose",
     name: "Rose",
     description: "Infused with the softness of fresh roses, this soap deeply hydrates while calming irritated skin. Leaves your skin smooth, fresh, and lightly fragrant. Best for dry and sensitive skin. Suitable for all skin types. Gentle, moisturizing, with a romantic fragrance. Handmade with love.",
-    price: 349,
-    originalPrice: 449,
+    price: 199,
     image: "/images/products/rose.jpeg",
     images: [
       "/images/products/rose.jpeg",
@@ -78,8 +76,7 @@ export const products: Product[] = [
     slug: "coffee-ubtan",
     name: "Coffee Ubtan",
     description: "A natural body polishing bar that removes dead skin and improves circulation. Perfect for smooth, glowing skin. Best for body exfoliation and tan removal. Suitable for all skin types. A natural scrub that is energizing, skin-polishing and handmade.",
-    price: 299,
-    originalPrice: 399,
+    price: 239,
     image: "/images/products/coffee-ubtan.jpeg",
     images: [
       "/images/products/coffee-ubtan.jpeg",
