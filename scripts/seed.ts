@@ -67,6 +67,22 @@ const products = [
     reviews: 98,
     tags: ['new'],
   },
+  {
+    slug: 'chandan-honey',
+    name: 'Chandan & Honey',
+    description: 'A luxurious blend of pure sandalwood and raw honey that nourishes, softens, and adds a natural glow to your skin. Sandalwood cools and soothes while honey locks in moisture. Best for dry, dull, and mature skin. Suitable for all skin types. Nourishing, cooling, glow-boosting and handmade.',
+    price: 329,
+    originalPrice: 429,
+    image: '/images/products/placeholder.svg',
+    images: ['/images/products/placeholder.svg'],
+    category: 'Ayurvedic',
+    ingredients: ['Sandalwood Powder', 'Raw Honey', 'Turmeric', 'Coconut Oil', 'Shea Butter', 'Essential Oils'],
+    weight: '100g',
+    inStock: true,
+    rating: 4.6,
+    reviews: 89,
+    tags: ['new'],
+  },
 ];
 
 async function seed() {

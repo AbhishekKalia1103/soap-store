@@ -1,0 +1,6 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="500" fill="#f3f0ea"/>
+  <text x="250" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#8a7e6b">Photo</text>
+  <text x="250" y="265" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#8a7e6b">Not Available</text>
+  <text x="250" y="310" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#b0a692">Coming Soon</text>
+</svg>
