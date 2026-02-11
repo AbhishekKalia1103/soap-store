@@ -142,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Handcrafted Section */}
+      {/* Brand Story Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -156,47 +156,65 @@ export default function Home() {
             </div>
             <div className="space-y-6">
               <span className="inline-block bg-olive-100 text-olive-700 text-sm font-medium px-4 py-1.5 rounded-full">
-                Our Process
+                Our Story
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 Where Earth Meets Bloom
               </h2>
               <p className="text-gray-600 text-lg">
-                Every bar of Mitti & Bloom soap is handcrafted with care using time-honored
-                recipes passed down through generations. We blend the finest organic
-                ingredients to create soaps that nourish your skin naturally.
+                Mitti &amp; Bloom was born from childhood friendship, slow living, and a deep
+                love for nature. Each soap is handcrafted in small batches using time-honoured
+                ingredients, earthy botanicals, and gentle oils that respect your skin and the planet.
               </p>
-              <ul className="space-y-3">
-                <li className="flex items-center gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-olive-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Small batch production for quality
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-olive-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Traditional cold process method
-                </li>
-                <li className="flex items-center gap-3 text-gray-700">
-                  <svg className="w-5 h-5 text-olive-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  4-6 weeks curing time for perfection
-                </li>
-              </ul>
+              <div className="space-y-2 text-gray-700 font-medium">
+                <p>No mass production.</p>
+                <p>No harsh chemicals.</p>
+                <p>Just honest, mindful skincare — made with patience and heart.</p>
+              </div>
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 text-olive-600 font-medium hover:underline"
               >
-                Learn more about our process
+                Read our full story
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Philosophy */}
+      <section className="py-16 bg-olive-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Philosophy</h2>
+            <p className="text-gray-600 text-lg">
+              We believe skincare should be simple, honest, and rooted in nature.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { title: "Gentle on Skin", desc: "Formulated to care, never irritate" },
+              { title: "Rooted in Tradition", desc: "Time-honoured ingredients & recipes" },
+              { title: "Thoughtfully Made", desc: "Small batches, big attention to detail" },
+              { title: "Beautifully Simple", desc: "No unnecessary additives, ever" },
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-6 rounded-xl shadow-sm text-center">
+                <div className="w-12 h-12 mx-auto bg-olive-100 rounded-full flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-olive-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
+                <p className="text-sm text-gray-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-gray-600 mt-8 max-w-2xl mx-auto">
+            Every bar is cured, packed, and handled with care — because your skin deserves nothing rushed.
+          </p>
         </div>
       </section>
 

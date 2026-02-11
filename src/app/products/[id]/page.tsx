@@ -105,7 +105,7 @@ export default function ProductDetailPage() {
                 src={product.images[selectedImage] || product.image}
                 alt={product.name}
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
               />
               {discount > 0 && (

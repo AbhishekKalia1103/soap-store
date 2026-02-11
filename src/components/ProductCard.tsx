@@ -24,7 +24,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             src={product.image}
             alt={product.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-contain group-hover:scale-105 transition-transform duration-300"
           />
           {/* Tags */}
           <div className="absolute top-3 left-3 flex flex-col gap-2">
