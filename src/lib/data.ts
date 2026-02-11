@@ -103,7 +103,7 @@ export const products: Product[] = [
     category: "Ayurvedic",
     ingredients: ["Sandalwood Powder", "Raw Honey", "Turmeric", "Coconut Oil", "Shea Butter", "Essential Oils"],
     weight: "100g",
-    inStock: true,
+    inStock: false,
     rating: 4.6,
     reviews: 89,
     tags: ["new"]
