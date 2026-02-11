@@ -71,30 +71,6 @@ export default function Home() {
                   priority
                 />
               </div>
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-olive-100 rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-6 h-6 text-olive-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900">5000+</p>
-                    <p className="text-sm text-gray-500">Happy Customers</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
