@@ -58,7 +58,6 @@ interface SavedAddress {
   isDefault: boolean;
 }
 
-const SHIPPING_COST = 0;
 const TAX_RATE = 0.18;
 
 export default function CheckoutPage() {
@@ -70,6 +69,8 @@ export default function CheckoutPage() {
   const [savedAddresses, setSavedAddresses] = useState<SavedAddress[]>([]);
   const [selectedAddressId, setSelectedAddressId] = useState<string | "new">("new");
   const [showNewAddressForm, setShowNewAddressForm] = useState(false);
+  const [shippingCost, setShippingCost] = useState(0);
+  const [freeShippingThreshold, setFreeShippingThreshold] = useState(0);
 
   const [formData, setFormData] = useState({
     customerName: "",
@@ -85,8 +86,21 @@ export default function CheckoutPage() {
   });
 
   const subtotal = totalPrice;
+  const effectiveShipping =
+    freeShippingThreshold > 0 && subtotal >= freeShippingThreshold ? 0 : shippingCost;
   const tax = Math.round(subtotal * TAX_RATE);
-  const total = subtotal + SHIPPING_COST + tax;
+  const total = subtotal + effectiveShipping + tax;
+
+  // Load shipping settings
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((res) => res.json())
+      .then((data) => {
+        setShippingCost(data.shippingCost);
+        setFreeShippingThreshold(data.freeShippingThreshold);
+      })
+      .catch(console.error);
+  }, []);
 
   // Load Razorpay script
   useEffect(() => {
@@ -586,7 +600,13 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Shipping</span>
-                  <span>₹{SHIPPING_COST}</span>
+                  <span>
+                    {effectiveShipping === 0 ? (
+                      <span className="text-green-600 font-medium">FREE</span>
+                    ) : (
+                      `₹${effectiveShipping}`
+                    )}
+                  </span>
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Tax (18% GST)</span>

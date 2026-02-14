@@ -4,8 +4,8 @@ import connectDB from '@/lib/db/mongodb';
 import Order from '@/lib/db/models/Order';
 import Product from '@/lib/db/models/Product';
 import { getAuthUser } from '@/lib/auth';
+import { calculateShipping } from '@/lib/shipping';
 
-const SHIPPING_COST = 0;
 const TAX_RATE = 0.18;
 
 const razorpay = new Razorpay({
@@ -85,8 +85,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Calculate totals
+    const shippingCost = await calculateShipping(subtotal);
     const tax = Math.round(subtotal * TAX_RATE);
-    const total = subtotal + SHIPPING_COST + tax;
+    const total = subtotal + shippingCost + tax;
 
     // Create Razorpay order
     const razorpayOrder = await razorpay.orders.create({
@@ -107,7 +108,7 @@ export async function POST(request: NextRequest) {
       items: orderItems,
       shippingAddress,
       subtotal,
-      shippingCost: SHIPPING_COST,
+      shippingCost,
       tax,
       total,
       status: 'pending',

@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectDB from '@/lib/db/mongodb';
 import Order from '@/lib/db/models/Order';
 import Product from '@/lib/db/models/Product';
+import { calculateShipping } from '@/lib/shipping';
 
-const SHIPPING_COST = 50; // Fixed shipping cost
 const TAX_RATE = 0.18; // 18% GST
 
 // GET /api/orders - List orders with filtering and pagination
@@ -138,8 +138,9 @@ export async function POST(request: NextRequest) {
     }
 
     // Calculate totals
+    const shippingCost = await calculateShipping(subtotal);
     const tax = Math.round(subtotal * TAX_RATE);
-    const total = subtotal + SHIPPING_COST + tax;
+    const total = subtotal + shippingCost + tax;
 
     // Create order
     const order = new Order({
@@ -148,7 +149,7 @@ export async function POST(request: NextRequest) {
       items: orderItems,
       shippingAddress: body.shippingAddress,
       subtotal,
-      shippingCost: SHIPPING_COST,
+      shippingCost,
       tax,
       total,
       status: 'pending',
