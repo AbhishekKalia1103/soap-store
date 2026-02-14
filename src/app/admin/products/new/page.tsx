@@ -240,7 +240,7 @@ export default function NewProductPage() {
               Main Image URL <span className="text-red-500">*</span>
             </label>
             <input
-              type="url"
+              type="text"
               value={form.image}
               onChange={(e) => setForm(prev => ({ ...prev, image: e.target.value }))}
               className="w-full px-4 py-2 border border-olive-200 rounded-lg focus:ring-2 focus:ring-olive-500 focus:border-olive-500 outline-none"
