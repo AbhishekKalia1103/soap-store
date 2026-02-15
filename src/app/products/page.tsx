@@ -36,7 +36,7 @@ function ProductsContent() {
   const filteredProducts = products
     .filter((p) => {
       // Filter by category
-      if (selectedCategory !== "all" && p.category.toLowerCase() !== selectedCategory.toLowerCase()) {
+      if (selectedCategory !== "all" && p.category.toLowerCase().replace(/\s+/g, '-') !== selectedCategory.toLowerCase()) {
         return false;
       }
       // Filter by price
