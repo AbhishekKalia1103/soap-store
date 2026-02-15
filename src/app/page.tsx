@@ -84,7 +84,7 @@ export default function Home() {
               { icon: "leaf", title: "100% Natural", desc: "Organic ingredients" },
               { icon: "heart", title: "Cruelty Free", desc: "Never tested on animals" },
               { icon: "recycle", title: "Eco-Friendly", desc: "Sustainable packaging" },
-              { icon: "truck", title: "Free Shipping", desc: "Orders above Rs.499" },
+              { icon: "truck", title: "Free Shipping", desc: "Orders above Rs.699" },
             ].map((feature, i) => (
               <div key={i} className="text-center">
                 <div className="w-12 h-12 mx-auto bg-olive-100 rounded-full flex items-center justify-center mb-3">
