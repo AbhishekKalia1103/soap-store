@@ -116,6 +116,7 @@ export const categories = [
   { name: "Floral", slug: "floral" },
   { name: "Detox", slug: "detox" },
   { name: "Exfoliating", slug: "exfoliating" },
+  { name: "Mini Soaps", slug: "mini-soaps" },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

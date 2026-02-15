@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import AdminLayout from '@/components/admin/AdminLayout';
 
-const CATEGORIES = ['Floral', 'Detox', 'Ayurvedic', 'Exfoliating', 'Moisturizing', 'Herbal', 'Specialty'];
+const CATEGORIES = ['Floral', 'Detox', 'Ayurvedic', 'Exfoliating', 'Moisturizing', 'Herbal', 'Specialty', 'Mini Soaps'];
 
 interface ProductForm {
   name: string;
