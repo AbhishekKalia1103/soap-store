@@ -161,6 +161,43 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Custom Soap CTA */}
+      <section className="py-16 bg-olive-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-white space-y-4">
+              <span className="inline-block bg-olive-500 text-white text-sm font-medium px-4 py-1.5 rounded-full">
+                Free Customization
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold">
+                Create Your Own Soap Blend
+              </h2>
+              <p className="text-olive-100">
+                Choose your ingredients, fragrance, and combination. We
+                handcraft the perfect soap just for you — ideal for personal
+                use, gifting, weddings &amp; more.
+              </p>
+              <Link
+                href="/customize"
+                className="inline-block bg-white text-olive-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              >
+                Start Customizing
+              </Link>
+            </div>
+            <div className="hidden md:block">
+              <div className="relative h-[300px] rounded-xl overflow-hidden">
+                <Image
+                  src="/custom-soap.jpg"
+                  alt="Create your own custom soap"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Our Philosophy */}
       <section className="py-16 bg-olive-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

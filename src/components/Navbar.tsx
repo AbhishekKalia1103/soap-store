@@ -50,6 +50,12 @@ export default function Navbar() {
                 Shop
               </Link>
               <Link
+                href="/customize"
+                className="text-gray-700 hover:text-olive-600 transition-colors font-medium"
+              >
+                Customize
+              </Link>
+              <Link
                 href="/about"
                 className="text-gray-700 hover:text-olive-600 transition-colors font-medium"
               >
@@ -257,6 +263,13 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Shop
+                </Link>
+                <Link
+                  href="/customize"
+                  className="text-gray-700 hover:text-olive-600 transition-colors font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Customize
                 </Link>
                 <Link
                   href="/about"
