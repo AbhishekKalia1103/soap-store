@@ -219,12 +219,12 @@ export default function CustomizePage() {
                 Bulk customization available.
               </p>
             </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-lg bg-olive-50">
               <Image
                 src="/custom-soap.jpg"
                 alt="Custom soap ingredients - turmeric, rose, aloe vera"
                 fill
-                className="object-cover object-top"
+                className="object-contain"
               />
             </div>
           </div>
