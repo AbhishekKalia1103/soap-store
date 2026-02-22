@@ -4,7 +4,6 @@ import Order from '@/lib/db/models/Order';
 import Product from '@/lib/db/models/Product';
 import { calculateShipping } from '@/lib/shipping';
 
-const TAX_RATE = 0.18; // 18% GST
 
 // GET /api/orders - List orders with filtering and pagination
 export async function GET(request: NextRequest) {
@@ -139,8 +138,8 @@ export async function POST(request: NextRequest) {
 
     // Calculate totals
     const shippingCost = await calculateShipping(subtotal);
-    const tax = Math.round(subtotal * TAX_RATE);
-    const total = subtotal + shippingCost + tax;
+    const tax = 0;
+    const total = subtotal + shippingCost;
 
     // Create order
     const order = new Order({

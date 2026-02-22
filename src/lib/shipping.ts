@@ -7,7 +7,7 @@ export async function calculateShipping(subtotal: number): Promise<number> {
   let settings = await Settings.findOne();
   if (!settings) {
     settings = await Settings.create({
-      shippingCost: 0,
+      shippingCost: 99,
       freeShippingThreshold: 699,
     });
   }

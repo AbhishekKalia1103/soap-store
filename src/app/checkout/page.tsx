@@ -58,8 +58,6 @@ interface SavedAddress {
   isDefault: boolean;
 }
 
-const TAX_RATE = 0.18;
-
 export default function CheckoutPage() {
   const router = useRouter();
   const { items, totalPrice, clearCart } = useCart();
@@ -88,8 +86,7 @@ export default function CheckoutPage() {
   const subtotal = totalPrice;
   const effectiveShipping =
     freeShippingThreshold > 0 && subtotal >= freeShippingThreshold ? 0 : shippingCost;
-  const tax = Math.round(subtotal * TAX_RATE);
-  const total = subtotal + effectiveShipping + tax;
+  const total = subtotal + effectiveShipping;
 
   // Load shipping settings
   useEffect(() => {
@@ -607,10 +604,6 @@ export default function CheckoutPage() {
                       `₹${effectiveShipping}`
                     )}
                   </span>
-                </div>
-                <div className="flex justify-between text-gray-600">
-                  <span>Tax (18% GST)</span>
-                  <span>₹{tax.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-lg font-bold pt-2 border-t">
                   <span>Total</span>

@@ -6,8 +6,6 @@ import Product from '@/lib/db/models/Product';
 import { getAuthUser } from '@/lib/auth';
 import { calculateShipping } from '@/lib/shipping';
 
-const TAX_RATE = 0.18;
-
 export async function POST(request: NextRequest) {
   try {
     const razorpay = new Razorpay({
@@ -86,8 +84,8 @@ export async function POST(request: NextRequest) {
 
     // Calculate totals
     const shippingCost = await calculateShipping(subtotal);
-    const tax = Math.round(subtotal * TAX_RATE);
-    const total = subtotal + shippingCost + tax;
+    const tax = 0;
+    const total = subtotal + shippingCost;
 
     // Create Razorpay order
     const razorpayOrder = await razorpay.orders.create({

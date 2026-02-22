@@ -227,10 +227,6 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                 <span>Shipping</span>
                 <span>₹{order.shippingCost.toLocaleString()}</span>
               </div>
-              <div className="flex justify-between text-gray-600">
-                <span>Tax</span>
-                <span>₹{order.tax.toLocaleString()}</span>
-              </div>
               <div className="flex justify-between font-semibold text-lg pt-2 border-t">
                 <span>Total</span>
                 <span>₹{order.total.toLocaleString()}</span>

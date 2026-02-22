@@ -10,7 +10,7 @@ const SettingsSchema = new Schema<ISettings>(
     shippingCost: {
       type: Number,
       required: true,
-      default: 0,
+      default: 99,
       min: 0,
     },
     freeShippingThreshold: {

@@ -193,10 +193,6 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                 <span className="text-olive-600">Shipping</span>
                 <span className="text-olive-800">{formatCurrency(order.shippingCost)}</span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-olive-600">Tax (GST 18%)</span>
-                <span className="text-olive-800">{formatCurrency(order.tax)}</span>
-              </div>
               <div className="flex justify-between text-lg font-semibold pt-2 border-t border-olive-100">
                 <span className="text-olive-800">Total</span>
                 <span className="text-olive-800">{formatCurrency(order.total)}</span>
