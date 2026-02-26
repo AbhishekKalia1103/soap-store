@@ -40,7 +40,8 @@ export const products: Product[] = [
     slug: "neem-aloe",
     name: "Neem & Aloe",
     description: "Your natural solution for acne-prone and oily skin. Neem is known for its antibacterial properties that help cleanse deeply and fight breakouts. Best for acne-prone and oily skin. Suitable for oily and combination skin types. Anti-bacterial, detoxifying, oil-control and handmade.",
-    price: 199,
+    price: 179,
+    originalPrice: 199,
     image: "/images/products/neem-aloe.jpeg",
     images: [
       "/images/products/neem-aloe.jpeg",
@@ -76,7 +77,8 @@ export const products: Product[] = [
     slug: "coffee-ubtan",
     name: "Coffee Ubtan",
     description: "A natural body polishing bar that removes dead skin and improves circulation. Perfect for smooth, glowing skin. Best for body exfoliation and tan removal. Suitable for all skin types. A natural scrub that is energizing, skin-polishing and handmade.",
-    price: 239,
+    price: 189,
+    originalPrice: 239,
     image: "/images/products/coffee-ubtan.jpeg",
     images: [
       "/images/products/coffee-ubtan.jpeg",
@@ -94,8 +96,8 @@ export const products: Product[] = [
     slug: "chandan-honey",
     name: "Chandan & Honey",
     description: "A luxurious blend of pure sandalwood and raw honey that nourishes, softens, and adds a natural glow to your skin. Sandalwood cools and soothes while honey locks in moisture. Best for dry, dull, and mature skin. Suitable for all skin types. Nourishing, cooling, glow-boosting and handmade.",
-    price: 329,
-    originalPrice: 429,
+    price: 199,
+    originalPrice: 249,
     image: "/images/products/placeholder.svg",
     images: [
       "/images/products/placeholder.svg"
