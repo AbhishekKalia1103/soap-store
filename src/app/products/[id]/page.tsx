@@ -160,14 +160,23 @@ export default function ProductDetailPage() {
             </div>
 
             {/* Price */}
-            <div className="flex items-center gap-3">
-              <span className="text-3xl font-bold text-gray-900">₹{product.price}</span>
-              {product.originalPrice && (
-                <span className="text-xl text-gray-500 line-through">
-                  ₹{product.originalPrice}
-                </span>
+            <div className="flex flex-wrap items-center gap-3">
+              {product.originalPrice ? (
+                <>
+                  <span className="text-3xl font-bold text-green-600">Sale ₹{product.price}</span>
+                  <span className="text-xl text-gray-500 line-through">
+                    MRP ₹{product.originalPrice}
+                  </span>
+                </>
+              ) : (
+                <span className="text-3xl font-bold text-gray-900">₹{product.price}</span>
               )}
             </div>
+            {product.originalPrice && (
+              <p className="text-green-600 font-medium">
+                You save ₹{product.originalPrice - product.price}
+              </p>
+            )}
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed">{product.description}</p>

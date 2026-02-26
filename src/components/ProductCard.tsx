@@ -85,12 +85,18 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Price */}
         <div className="flex items-center gap-2 mt-3">
-          <span className="text-lg font-bold text-gray-900">
-            ₹{product.price}
-          </span>
-          {product.originalPrice && (
-            <span className="text-sm text-gray-500 line-through">
-              ₹{product.originalPrice}
+          {product.originalPrice ? (
+            <>
+              <span className="text-lg font-bold text-green-600">
+                Sale ₹{product.price}
+              </span>
+              <span className="text-sm text-gray-500 line-through">
+                MRP ₹{product.originalPrice}
+              </span>
+            </>
+          ) : (
+            <span className="text-lg font-bold text-gray-900">
+              ₹{product.price}
             </span>
           )}
         </div>
