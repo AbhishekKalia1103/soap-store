@@ -74,10 +74,13 @@ export async function PATCH(
       );
     }
 
-    // Only allow updating status and paymentStatus
+    // Only allow updating status, paymentStatus, and financial fields
     const allowedUpdates: Record<string, unknown> = {};
     if (body.status) allowedUpdates.status = body.status;
     if (body.paymentStatus) allowedUpdates.paymentStatus = body.paymentStatus;
+    if (body.shippingCost !== undefined) allowedUpdates.shippingCost = body.shippingCost;
+    if (body.tax !== undefined) allowedUpdates.tax = body.tax;
+    if (body.total !== undefined) allowedUpdates.total = body.total;
 
     if (Object.keys(allowedUpdates).length === 0) {
       return NextResponse.json(
