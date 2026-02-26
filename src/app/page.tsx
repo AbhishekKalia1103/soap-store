@@ -307,7 +307,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-white space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold">
-                Get 20% Off Your First Order
+                Subscribe to Our Newsletter
               </h2>
               <p className="text-olive-100">
                 Subscribe to our newsletter and receive exclusive offers, new product
