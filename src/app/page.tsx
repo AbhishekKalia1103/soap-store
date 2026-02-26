@@ -76,6 +76,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Holi Sale Banner */}
+      <section className="bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white text-center">
+            <span className="text-2xl">🎨</span>
+            <p className="text-lg sm:text-xl font-bold tracking-wide">
+              HOLI SALE IS LIVE — Up to 25% OFF on All Soaps!
+            </p>
+            <span className="text-2xl">🎨</span>
+            <Link
+              href="/products"
+              className="bg-white text-purple-600 font-semibold px-5 py-2 rounded-full hover:bg-yellow-100 transition-colors text-sm"
+            >
+              Shop Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
       <section className="py-12 bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
