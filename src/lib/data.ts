@@ -118,6 +118,7 @@ export const categories = [
   { name: "Floral", slug: "floral" },
   { name: "Detox", slug: "detox" },
   { name: "Exfoliating", slug: "exfoliating" },
+  { name: "Scrub/Face Mask", slug: "scrub-face-mask" },
   { name: "Mini Soaps", slug: "mini-soaps" },
 ];
 

@@ -43,6 +43,11 @@ export default function ProductCard({ product }: ProductCardProps) {
                 New
               </span>
             )}
+            {product.tags.includes("coming-soon") && (
+              <span className="bg-amber-500 text-white text-xs font-medium px-2 py-1 rounded">
+                Coming Soon
+              </span>
+            )}
           </div>
           {!product.inStock && (
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center">

@@ -113,6 +113,11 @@ export default function ProductDetailPage() {
                   {discount}% OFF
                 </span>
               )}
+              {product.tags.includes("coming-soon") && (
+                <span className="absolute top-4 left-4 bg-amber-500 text-white text-sm font-medium px-3 py-1 rounded">
+                  Coming Soon
+                </span>
+              )}
             </div>
             {product.images.length > 1 && (
               <div className="flex gap-4">
