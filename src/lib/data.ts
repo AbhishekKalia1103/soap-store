@@ -109,6 +109,23 @@ export const products: Product[] = [
     rating: 4.6,
     reviews: 89,
     tags: ["new"]
+  },
+  {
+    slug: "baby-soap",
+    name: "Baby Soap",
+    description: "Ultra-gentle, tear-free soap specially crafted for delicate baby skin. Made with the mildest natural ingredients to cleanse softly without drying. Dermatologically safe, free from harsh chemicals, parabens, and artificial fragrances. Perfect for your little one's bath time.",
+    price: 199,
+    image: "/images/products/placeholder.svg",
+    images: [
+      "/images/products/placeholder.svg"
+    ],
+    category: "Ayurvedic",
+    ingredients: ["Coconut Oil", "Shea Butter", "Chamomile Extract", "Aloe Vera", "Glycerin", "Calendula Extract"],
+    weight: "75g",
+    inStock: false,
+    rating: 0,
+    reviews: 0,
+    tags: ["coming-soon"]
   }
 ];
 

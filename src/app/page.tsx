@@ -79,15 +79,25 @@ export default function Home() {
       {/* Holi Sale Banner */}
       <section className="bg-gradient-to-r from-pink-500 via-purple-500 to-yellow-400 py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-white text-center">
-            <span className="text-2xl">🎨</span>
-            <p className="text-lg sm:text-xl font-bold tracking-wide">
-              HOLI SALE IS LIVE — Up to 25% OFF on All Soaps!
-            </p>
-            <span className="text-2xl">🎨</span>
+          <div className="flex flex-col items-center justify-center gap-2 text-white text-center">
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">🎨</span>
+              <p className="text-lg sm:text-xl font-bold tracking-wide">
+                HOLI SALE IS LIVE!
+              </p>
+              <span className="text-2xl">🎨</span>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-sm sm:text-base font-semibold">
+              <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full">
+                Buy 1 Get 25% OFF
+              </span>
+              <span className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full">
+                Buy 2 Get 2 FREE
+              </span>
+            </div>
             <Link
               href="/products"
-              className="bg-white text-purple-600 font-semibold px-5 py-2 rounded-full hover:bg-yellow-100 transition-colors text-sm"
+              className="bg-white text-purple-600 font-semibold px-5 py-2 rounded-full hover:bg-yellow-100 transition-colors text-sm mt-1"
             >
               Shop Now
             </Link>
