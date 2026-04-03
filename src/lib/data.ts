@@ -98,9 +98,9 @@ export const products: Product[] = [
     description: "A luxurious blend of pure sandalwood and raw honey that nourishes, softens, and adds a natural glow to your skin. Sandalwood cools and soothes while honey locks in moisture. Best for dry, dull, and mature skin. Suitable for all skin types. Nourishing, cooling, glow-boosting and handmade.",
     price: 199,
     originalPrice: 249,
-    image: "/images/products/placeholder.svg",
+    image: "/images/products/chandan-honey.jpeg",
     images: [
-      "/images/products/placeholder.svg"
+      "/images/products/chandan-honey.jpeg"
     ],
     category: "Ayurvedic",
     ingredients: ["Sandalwood Powder", "Raw Honey", "Turmeric", "Coconut Oil", "Shea Butter", "Essential Oils"],
