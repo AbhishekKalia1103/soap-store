@@ -122,13 +122,12 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <Image
-                src="/soap-recipe.jpg"
-                alt="Handwritten soap recipe"
-                fill
-                className="object-cover"
-              />
+            <div className="flex justify-center">
+              <div className="max-w-xs rounded-2xl overflow-hidden shadow-lg">
+                <video autoPlay muted loop playsInline controls className="w-full h-auto">
+                  <source src="/videos/showcase-3.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
             <div className="space-y-6">
               <span className="inline-block bg-olive-100 text-olive-700 text-sm font-medium px-4 py-1.5 rounded-full">
@@ -184,14 +183,11 @@ export default function Home() {
                 Start Customizing
               </Link>
             </div>
-            <div className="hidden md:block">
-              <div className="relative h-[300px] rounded-xl overflow-hidden">
-                <Image
-                  src="/custom-soap.jpg"
-                  alt="Create your own custom soap"
-                  fill
-                  className="object-cover object-center"
-                />
+            <div className="hidden md:flex justify-center">
+              <div className="max-w-xs rounded-xl overflow-hidden shadow-lg">
+                <video autoPlay muted loop playsInline controls className="w-full h-auto">
+                  <source src="/videos/showcase.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -327,14 +323,11 @@ export default function Home() {
                 </button>
               </form>
             </div>
-            <div className="hidden md:block">
-              <div className="relative h-[300px] rounded-xl overflow-hidden">
-                <Image
-                  src="/made-with-love.jpg"
-                  alt="Made with patience and love"
-                  fill
-                  className="object-cover"
-                />
+            <div className="hidden md:flex justify-center">
+              <div className="max-w-xs rounded-xl overflow-hidden shadow-lg">
+                <video autoPlay muted loop playsInline controls className="w-full h-auto">
+                  <source src="/videos/showcase-2.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>

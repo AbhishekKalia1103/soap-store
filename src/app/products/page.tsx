@@ -134,6 +134,7 @@ function ProductsContent() {
               >
                 Reset Filters
               </button>
+
             </div>
           </aside>
 
